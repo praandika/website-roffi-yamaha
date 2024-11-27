@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/img/apple-icon.png') }}">
     <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}">
     <title>
-        Dashboard
+        Login
     </title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css"
@@ -73,7 +73,7 @@
             </div>
         </div>
     </div>
-    <main class="main-content  mt-0">
+    <main class="main-content mt-0">
         <div class="page-header align-items-start min-vh-100"
             style="background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');">
             <span class="mask bg-gradient-dark opacity-6"></span>
@@ -92,13 +92,11 @@
                                 <form method="POST" class="text-start" action="{{ route('login') }}">
                                 @csrf
                                     <div class="input-group input-group-outline my-3">
-                                        <label class="form-label">Username</label>
-                                        <input type="text" class="form-control" name="username" value="{{ old('username') }}" autofocus autocomplete="username" required>
+                                        <input type="text" class="form-control" name="username" value="{{ old('username') }}" autofocus autocomplete="username" required placeholder="Username">
                                         <x-input-error :messages="$errors->get('username')" class="mt-2" />
                                     </div>
                                     <div class="input-group input-group-outline mb-3">
-                                        <label class="form-label">Password</label>
-                                        <input type="password" class="form-control" name="password" autocomplete="current-password" required>
+                                        <input type="password" class="form-control" name="password" autocomplete="current-password" required  placeholder="Password">
                                         <x-input-error :messages="$errors->get('password')" class="mt-2" />
                                     </div>
                                     <div class="form-check form-switch d-flex align-items-center mb-3">
