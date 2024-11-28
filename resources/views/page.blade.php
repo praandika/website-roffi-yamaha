@@ -9,7 +9,7 @@
     
 @elseif (Route::is('spesification.*'))
     @include('components.spesification')
-    
+
 @elseif (Route::is('banner.*'))
     @if (Route::is('banner.create'))
         @include('components.banner-create')
@@ -20,7 +20,14 @@
     @endif
     
 @elseif (Route::is('about.*'))
-    @include('components.about')
+    @if (Route::is('about.create'))
+        @include('components.about-create')
+    @elseif (Route::is('about.edit'))
+        @include('components.about-edit')
+    @else
+        @include('components.about')
+    @endif
+    
 @else
     Error
 @endif

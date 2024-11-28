@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AboutController extends Controller
 {
@@ -12,7 +13,9 @@ class AboutController extends Controller
      */
     public function index()
     {
-        return view('page');
+        $data = About::all();
+        $count = About::count();
+        return view('page', compact('data','count'));
     }
 
     /**
@@ -20,7 +23,7 @@ class AboutController extends Controller
      */
     public function create()
     {
-        //
+        return view('page');
     }
 
     /**
@@ -28,7 +31,28 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'image' => 'image|mimes:jpeg,png,jpg',
+        ]);
+
+        $data = new About();
+        $data->kontak = $request->kontak;
+        $data->tentang = $request->tentang;
+        if ($request->image == '') {
+            $data->gambar = 'noimage.jpg';
+            $data->save();
+            toast('Yay! ceritamu sudah berhasil ditambah','success');
+            return redirect()->back();
+        } else {
+            $img = $request->file('image');
+            $img_file = time()."_".$img->getClientOriginalName();
+            $dir_img = 'img/about';
+            $img->move($dir_img,$img_file);
+            $data->gambar = $img_file;
+            $data->save();
+            toast('Yay! ceritamu sudah berhasil ditambah','success');
+            return redirect()->back();
+        }
     }
 
     /**
@@ -44,7 +68,7 @@ class AboutController extends Controller
      */
     public function edit(About $about)
     {
-        //
+        return view('page', compact('about'));
     }
 
     /**
@@ -52,7 +76,32 @@ class AboutController extends Controller
      */
     public function update(Request $request, About $about)
     {
-        //
+        $data = About::find($about->id);
+        $data->kontak = $request->kontak;
+        $data->tentang = $request->tentang;
+        if ($request->hasfile('image')) {
+            if ($data->gambar != '' && $data->gambar != 'banner.jpg') {
+                $img_prev = $request->img_prev;
+                if (Storage::exists('img/about'.$img_prev)) {
+                    unlink('img/about'.$img_prev);
+                }
+            }
+
+            $img = $request->file('image');
+            $img_file = time()."_".$img->getClientOriginalName();
+            $dir_img = 'img/about';
+            $img->move($dir_img,$img_file);
+
+            $data->gambar = $img_file;
+            $data->save();
+            toast('Yay! ceritamu sudah berhasil diubah','success');
+            return redirect()->back();
+
+        }else{
+            $data->save();
+            toast('Yay! ceritamu sudah berhasil diubah','success');
+            return redirect()->back();
+        }
     }
 
     /**

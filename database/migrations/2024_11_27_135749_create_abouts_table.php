@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
             $table->string('gambar');
-            $table->string('tentang');
+            $table->text('tentang');
             $table->string('kontak');
             $table->timestamps();
         });

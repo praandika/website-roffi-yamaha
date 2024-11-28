@@ -54,7 +54,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-success">Simpan datanya</button>
+            <button type="submit" class="btn btn-success">Ubah bannernya</button>
             <button type="reset" class="btn btn-secondary">Hapus yang Diketik tadi</button>
 
         </form>

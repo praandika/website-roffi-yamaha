@@ -15,13 +15,13 @@
                 <div class="col-md-6">
                     <div class="input-group input-group-outline my-3">
                         <label class="form-label">Nama Product</label>
-                        <input type="text" class="form-control" name="model_name">
+                        <input type="text" class="form-control" name="model_name" required>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="input-group input-group-outline my-3">
                         <label class="form-label">Warna</label>
-                        <input type="text" class="form-control" name="warna">
+                        <input type="text" class="form-control" name="warna" required>
                     </div>
                 </div>
             </div>
@@ -29,13 +29,13 @@
                 <div class="col-md-6">
                     <div class="input-group input-group-outline my-3">
                         <label class="form-label">Harga</label>
-                        <input type="number" class="form-control" name="harga">
+                        <input type="number" class="form-control" name="harga" required>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="input-group input-group-static mb-4">
                         <label for="formSelect" class="ms-0">Kategori</label>
-                        <select class="form-control" id="formSelect" name="kategori">
+                        <select class="form-control" id="formSelect" name="kategori" required>
                             <option value="MAXI">MAXI</option>
                             <option value="CLASSY">CLASSY</option>
                             <option value="MATIC">MATIC</option>
@@ -49,8 +49,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="input-group input-group-outline my-3">
-                        <label class="form-label">Gambar</label>
-                        <input type="file" class="form-control" name="image" placeholder="" accept=".jpg, .jpeg, .png">
+                        <input type="file" class="form-control" name="image" placeholder="" accept=".jpg, .jpeg, .png" required>
                     </div>
                 </div>
             </div>

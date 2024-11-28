@@ -41,7 +41,7 @@ class BannerController extends Controller
         if ($request->image == '') {
             $data->gambar = 'banner.jpg';
             $data->save();
-            toast('Yay! banner mu sudah berhasil ditambah','success');
+            toast('Yay! bannermu sudah berhasil ditambah','success');
             return redirect()->back();
         } else {
             $img = $request->file('image');
@@ -50,7 +50,7 @@ class BannerController extends Controller
             $img->move($dir_img,$img_file);
             $data->gambar = $img_file;
             $data->save();
-            toast('Yay! banner mu sudah berhasil ditambah','success');
+            toast('Yay! bannermu sudah berhasil ditambah','success');
             return redirect()->back();
         }
     }
@@ -95,12 +95,12 @@ class BannerController extends Controller
 
             $data->gambar = $img_file;
             $data->save();
-            toast('Yay! banner mu sudah berhasil diubah','success');
+            toast('Yay! bannermu sudah berhasil diubah','success');
             return redirect()->back();
 
         }else{
             $data->save();
-            toast('Yay! banner mu sudah berhasil diubah','success');
+            toast('Yay! bannermu sudah berhasil diubah','success');
             return redirect()->back();
         }
     }

@@ -43,7 +43,7 @@ class ProductController extends Controller
         if ($request->image == '') {
             $data->gambar = 'noimage.jpg';
             $data->save();
-            toast('Yay! product mu sudah berhasil ditambah','success');
+            toast('Yay! productmu sudah berhasil ditambah','success');
             return redirect()->back();
         } else {
             $img = $request->file('image');
@@ -52,7 +52,7 @@ class ProductController extends Controller
             $img->move($dir_img,$img_file);
             $data->gambar = $img_file;
             $data->save();
-            toast('Yay! product mu sudah berhasil ditambah','success');
+            toast('Yay! productmu sudah berhasil ditambah','success');
             return redirect()->back();
         }
     }
@@ -99,12 +99,12 @@ class ProductController extends Controller
 
             $data->gambar = $img_file;
             $data->save();
-            toast('Yay! product mu sudah berhasil diubah','success');
+            toast('Yay! productmu sudah berhasil diubah','success');
             return redirect()->back();
 
         }else{
             $data->save();
-            toast('Yay! product mu sudah berhasil diubah','success');
+            toast('Yay! productmu sudah berhasil diubah','success');
             return redirect()->back();
         }
     }
