@@ -9,8 +9,16 @@
     
 @elseif (Route::is('spesification.*'))
     @include('components.spesification')
+    
 @elseif (Route::is('banner.*'))
-    @include('components.banner')
+    @if (Route::is('banner.create'))
+        @include('components.banner-create')
+    @elseif (Route::is('banner.edit'))
+        @include('components.banner-edit')
+    @else
+        @include('components.banner')
+    @endif
+    
 @elseif (Route::is('about.*'))
     @include('components.about')
 @else

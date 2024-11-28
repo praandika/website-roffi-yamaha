@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('title','Product')
-@section('page-title',content: 'Tambah Product')
+@section('page-title',content: 'Ubah Product')
 
 @section('content')
 <a href="{{ route('product.index') }}" class="btn btn-icon btn-3 btn-primary mb-4" type="button">
@@ -15,19 +15,22 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="input-group input-group-outline my-3">
-                        <input type="text" class="form-control" name="model_name" value="{{ $product->model_name }}" placeholder="Nama Product">
+                        <input type="text" class="form-control" name="model_name" value="{{ $product->model_name }}"
+                            placeholder="Nama Product">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="input-group input-group-outline my-3">
-                        <input type="text" class="form-control" name="warna" value="{{ $product->warna }}" placeholder="Warna">
+                        <input type="text" class="form-control" name="warna" value="{{ $product->warna }}"
+                            placeholder="Warna">
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="input-group input-group-outline my-3">
-                        <input type="number" class="form-control" name="harga" value="{{ $product->harga }}" placeholder="Harga">
+                        <input type="number" class="form-control" name="harga" value="{{ $product->harga }}"
+                            placeholder="Harga">
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -50,16 +53,28 @@
                 <div class="col-md-6">
                     <button type="button" id="btnImage" class="btn btn-info">Ubah Gambar ah</button>
                     <div class="input-group input-group-outline my-3">
-                        <input type="file" class="form-control" name="image" placeholder="" accept=".jpg, .jpeg, .png" style="display: none;" id="formImage">
+                        <input type="file" class="form-control" name="image" placeholder="" accept=".jpg, .jpeg, .png"
+                            style="display: none;" id="formImage">
                     </div>
                     <p>Nama Filenya : {{ $product->gambar }}</p>
                 </div>
 
                 <div class="col-md-6">
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="status" id="yes" {{ $product->status == 'show' ? 'checked' : '' }} value="show">
+                        <label class="custom-control-label" for="yes">Show</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="status" id="no" {{ $product->status == 'show' ? '' : 'checked' }} value="hide">
+                        <label class="custom-control-label" for="no">Hide</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-4">
                     <img src="{{ asset('img/'.$product->gambar) }}" alt="img-blur-shadow"
                         class="img-fluid shadow border-radius-lg">
                 </div>
-
             </div>
 
             <button type="submit" class="btn btn-success">Simpan datanya</button>

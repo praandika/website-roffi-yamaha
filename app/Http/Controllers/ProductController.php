@@ -83,7 +83,7 @@ class ProductController extends Controller
         $data->kategori = $request->kategori;
         $data->warna = $request->warna;
         $data->harga = $request->harga;
-        $data->status = 'show';
+        $data->status = $request->status;
         if ($request->hasfile('image')) {
             if ($data->gambar != '' && $data->gambar != 'noimage.jpg') {
                 $img_prev = $request->img_prev;
