@@ -15,6 +15,8 @@
                     <tr>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Judul
                         </th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Gambar Kecil
+                        </th>
                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                             Link</th>
                         <th class="text-secondary opacity-7"></th>
@@ -35,6 +37,16 @@
                             </div>
                         </td>
                         <td>
+                            <div class="d-flex px-2 py-1">
+                                <div>
+                                    <img src="{{ asset('img/banner/'.$o->gambar2) }}" class="avatar avatar-sm me-3">
+                                </div>
+                                <div class="d-flex flex-column justify-content-center">
+                                    <h6 class="mb-0 text-xs">{{ $o->teks_banner }}</h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
                             <p class="text-xs font-weight-bold mb-0">{{ $o->link }}</p>
                         </td>
                         <td class="align-middle">
@@ -47,7 +59,8 @@
                         </td>
                     </tr>
                     @empty
-                    <td colspan="3" style="text-align: center;">gak ada data nih</td>
+                    <td colspan="4" style="text-align: center;">gak ada data nih</td>
+                    <td></td>
                     <td></td>
                     <td></td>
                     @endforelse

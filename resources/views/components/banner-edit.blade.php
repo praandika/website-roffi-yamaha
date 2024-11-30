@@ -26,14 +26,25 @@
                     </div>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-md-6">
-                    <button type="button" id="btnImage" class="btn btn-info">Ubah Gambar ah</button>
+                    <div class="input-group input-group-outline my-3">
+                        <input type="text" class="form-control" name="teks_banner" value="{{ $banner->teks_banner }}"
+                            placeholder="Teks Banner">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <button type="button" id="btnImage" class="btn btn-info">Ubah Banner ah</button>
                     <div class="input-group input-group-outline my-3">
                         <input type="file" class="form-control" name="image" placeholder="" accept=".jpg, .jpeg, .png"
                             style="display: none;" id="formImage">
                     </div>
                     <p>Nama Filenya : {{ $banner->gambar }}</p>
+                    <input type="hidden" name="img_prev" value="{{ $banner->gambar }}">
                 </div>
 
                 <div class="col-md-6">
@@ -54,6 +65,24 @@
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-md-6">
+                    <button type="button" id="btnImage2" class="btn btn-info">Ubah Gambar Kecil ah</button>
+                    <div class="input-group input-group-outline my-3">
+                        <input type="file" class="form-control" name="image2" placeholder="" accept=".jpg, .jpeg, .png"
+                            style="display: none;" id="formImage2">
+                    </div>
+                    <p>Nama Filenya : {{ $banner->gambar2 }}</p>
+                    <input type="hidden" name="img_prev2" value="{{ $banner->gambar2 }}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mb-4">
+                    <img src="{{ asset('img/banner/'.$banner->gambar2) }}" alt="img-blur-shadow"
+                        class="img-fluid shadow border-radius-lg">
+                </div>
+            </div>
+
             <button type="submit" class="btn btn-success">Ubah bannernya</button>
             <button type="reset" class="btn btn-secondary">Hapus yang Diketik tadi</button>
 
@@ -67,6 +96,14 @@
     $('#btnImage').on('click', function () {
         $('#formImage').css('display', 'block');
         $('#formImage').addClass('fadeInBawah');
+    });
+
+</script>
+
+<script>
+    $('#btnImage2').on('click', function () {
+        $('#formImage2').css('display', 'block');
+        $('#formImage2').addClass('fadeInBawah');
     });
 
 </script>

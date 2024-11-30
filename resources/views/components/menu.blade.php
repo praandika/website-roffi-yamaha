@@ -37,6 +37,12 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link {{ Route::is('contact.*') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('contact.index') }}">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <span class="nav-link-text ms-1">Contact</span>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link {{ Route::is('website') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('website') }}" target="_blank">
                     <i class="fa-solid fa-globe"></i>
                     <span class="nav-link-text ms-1">Go to Website</span>

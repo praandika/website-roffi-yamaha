@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SpesificationController;
@@ -35,5 +36,6 @@ Route::resource('product', ProductController::class)->middleware(['auth', 'verif
 Route::resource('banner', BannerController::class)->middleware(['auth', 'verified']);
 Route::resource('about', AboutController::class)->middleware(['auth', 'verified']);
 Route::resource('spesification', SpesificationController::class)->middleware(['auth', 'verified']);
+Route::resource('contact', ContactController::class)->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';
