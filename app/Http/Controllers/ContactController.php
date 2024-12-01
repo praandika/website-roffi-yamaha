@@ -13,7 +13,8 @@ class ContactController extends Controller
     public function index()
     {
         $data = Contact::all();
-        return view('page', compact('data'));
+        $count = Contact::count();
+        return view('page', compact('data','count'));
     }
 
     /**

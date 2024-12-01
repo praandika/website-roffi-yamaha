@@ -3,10 +3,12 @@
 @section('page-title',content: 'Contact')
 
 @section('content')
+@if($count <= 0)
 <a href="{{ route('contact.create') }}" class="btn btn-icon btn-3 btn-primary mb-4" type="button">
     <span class="btn-inner--icon"><i class="fa-solid fa-plus"></i></span>
     <span class="btn-inner--text">Tambah</span>
 </a>
+@endif
 <div class="row mb-4">
     <div class="card">
         <div class="table-responsive">

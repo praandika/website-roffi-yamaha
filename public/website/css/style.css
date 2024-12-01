@@ -185,7 +185,11 @@
 }
 
 .page-header-inner {
-    background: rgba(0, 0, 0, .7);
+    background: var(--secondary);
+}
+
+.page-header-inner a:hover {
+    color: #ffffff !important;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
@@ -195,10 +199,7 @@
 
 /*** Facts ***/
 .fact {
-    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/carousel-bg-1.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #0B2154;
 }
 
 
@@ -219,8 +220,7 @@
 
 /*** Booking ***/
 .booking {
-    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/carousel-bg-2.jpg) center center no-repeat;
-    background-size: cover;
+    background-color: #0B2154;
 }
 
 .bootstrap-datetimepicker-widget.bottom {
@@ -314,8 +314,7 @@
 
 /*** Footer ***/
 .footer {
-    background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .9)), url(../img/carousel-bg-1.jpg) center center no-repeat;
-    background-size: cover;
+    background-color: #0B2154;
 }
 
 .footer .btn.btn-social {
@@ -380,4 +379,42 @@
     margin-right: 0;
     padding-right: 0;
     border-right: none;
+}
+
+/* SALES PERSON WIDGET */
+.sales {
+    position: fixed;
+    bottom: 0;
+    z-index: 9999999;
+}
+
+.sales img {
+    width: 50%;   
+}
+
+.sales .detail {
+    position: absolute;
+    bottom: 0;
+    background-color: #05a00a;
+    padding: 10px 50px 0 30px;
+    border-radius: 0 50px 50px 0;
+}
+
+.sales h4 {
+     color: #ffffff;
+}
+
+/* Gaya untuk tablet (maksimal lebar 768px) */
+@media (max-width: 768px) {
+    .sales img {
+        width: 35%;
+    }
+
+    .sales h4 {
+        font-size: 15px;
+   }
+
+   .sales .detail {
+    padding: 8px 30px 0 10px;
+}
 }

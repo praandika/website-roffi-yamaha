@@ -16,7 +16,7 @@
             <div class="h-100 d-inline-flex align-items-center py-3 me-4">
                 <small class="fa fa-phone-alt text-primary me-2"></small>
                 <small>
-                    <a href="https://wa.me/{{ $o->phone }}">+{{ $o->phone }}</a>
+                    <a href="https://wa.me/{{ $o->phone }}?text=Hai%20saya%20ingin%20tanya%20motor%20Yamaha">+{{ $o->phone }}</a>
                 </small>
             </div>
             <div class="h-100 d-inline-flex align-items-center">

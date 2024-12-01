@@ -10,9 +10,13 @@
                         <div class="row align-items-center justify-content-center justify-content-lg-start">
                             <div class="col-10 col-lg-7 text-center text-lg-start">
                                 <h6 class="text-white text-uppercase mb-3 animated slideInDown">Yamaha Deta Bali</h6>
-                                <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown">{{ $o->teks_banner }}</h1>
-                                <a href="{{ $o->link }}" class="btn btn-primary py-3 px-5 animated slideInDown">Learn More<i
+                                <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown">{{ $o->teks_banner }}
+                                </h1>
+                                @foreach ($contact as $o)
+                                <a href="https://wa.me/{{ $o->phone }}?text=Hai%20saya%20ingin%20tanya%20motor%20Yamaha"
+                                    class="btn btn-primary py-3 px-5 animated slideInDown">Learn More<i
                                         class="fa fa-arrow-right ms-3"></i></a>
+                                @endforeach
                             </div>
                             <div class="col-lg-5 d-none d-lg-flex animated zoomIn">
                                 <img class="img-fluid" src="{{ asset('img/banner/'.$o->gambar2) }}" alt="">

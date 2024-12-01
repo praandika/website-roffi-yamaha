@@ -43,7 +43,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Route::is('website') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('website') }}" target="_blank">
+                <a class="nav-link {{ Route::is('website.index') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('website.index') }}" target="_blank">
                     <i class="fa-solid fa-globe"></i>
                     <span class="nav-link-text ms-1">Go to Website</span>
                 </a>

@@ -20,7 +20,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [WebsiteController::class, 'index'])->name('website');
+Route::get('/', [WebsiteController::class, 'index'])->name('website.index');
+Route::get('/products', [WebsiteController::class, 'product'])->name('website.product');
+Route::get('/abouts', [WebsiteController::class, 'about'])->name('website.about');
+Route::get('/category/{param?}', [WebsiteController::class, 'category'])->name('website.category');
+Route::get('/contacts', [WebsiteController::class, 'contact'])->name('website.contact');
+Route::get('/detail/{param?}', [WebsiteController::class, 'detail'])->name('website.detail');
+Route::post('/search', [WebsiteController::class, 'search'])->name('website.search');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

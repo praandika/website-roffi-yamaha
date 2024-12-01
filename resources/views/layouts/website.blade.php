@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Yamaha Deta Bali</title>
+    <title>@yield('title', 'Yamaha Deta Bali')</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -34,11 +34,12 @@
 </head>
 
 <body>
-    @include('website.toolbar')
-    @include('website.navbar')
-    @include('website.banner')
-    @include('website.product')
-    @include('website.footer')
+    @include('website.components.toolbar')
+    @include('website.components.navbar')
+
+    @yield('content')
+
+    @include('website.components.footer')
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
