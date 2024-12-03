@@ -166,7 +166,7 @@
                             +62 {{ implode('-', str_split($formatNumber,4)) }}
                         </h3>
                     
-                    <a href="https://wa.me/{{ $o->phone }}?text=Hai%20saya%20ingin%20tanya%20motor%20{{ $param }}%20" class="btn btn-secondary py-3 px-5">Hubungi Saya<i class="fa fa-arrow-right ms-3"></i></a>
+                    <a href="https://wa.me/{{ $o->phone }}?text=Hai%20saya%20ingin%20tanya%20motor%20{{ $param }}" class="btn btn-secondary py-3 px-5">Hubungi Saya<i class="fa fa-arrow-right ms-3"></i></a>
                     @endforeach
                 </div>
             </div>

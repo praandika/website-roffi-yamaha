@@ -20,7 +20,7 @@
                 </div>
             </div>
             <a href="{{ route('website.contact') }}" class="nav-item nav-link {{ Route::is('website.contact')  ? 'active' : '' }}">Contact</a>
-            <a href="{{ route('website.about') }}" class="nav-item nav-link {{ Route::is('website.product')  ? 'active' : '' }}">About</a>
+            <a href="{{ route('website.about') }}" class="nav-item nav-link {{ Route::is('website.about')  ? 'active' : '' }}">About</a>
         </div>
         @forelse ($contact as $o)
         <a href="https://wa.me/{{ $o->phone }}?text=Hai%20saya%20ingin%20tanya%20motor%20Yamaha" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Beli Disini!<i
